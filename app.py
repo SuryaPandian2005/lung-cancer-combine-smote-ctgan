@@ -17,35 +17,44 @@ def get_ai_analysis(patient_data, prediction, probability, model_name):
     risk = "High Risk" if prediction == 1 else "Low Risk"
 
     prompt = f"""
-You are a medical assistant AI.
+You are a professional medical assistant.
 
-Patient Details:
+Patient Data:
 {patient_data.to_string(index=False)}
 
-Model Used: {model_name}
 Prediction: {risk}
-Risk Probability: {probability}%
+Risk: {probability}%
 
-Explain:
-1. What this result means
-2. Possible causes
-3. Lifestyle advice
-4. When to consult a doctor
+Give ONLY practical output in this format:
 
-Keep it simple and clear.
+🧠 Result Summary:
+(1-2 lines simple explanation)
+
+⚠️ Key Risk Factors:
+(bullet points, max 5)
+
+✅ What To Do Now:
+(clear action steps, simple and practical)
+
+🏥 When To See Doctor:
+(clear condition when medical help is needed)
+
+Rules:
+- Keep it SHORT
+- No long paragraphs
+- No technical words
+- Easy for normal people
 """
 
     completion = client.chat.completions.create(
         model="openai/gpt-oss-120b",
         messages=[{"role": "user", "content": prompt}],
-        temperature=0.7,
-        max_completion_tokens=800,
-        top_p=1,
+        temperature=0.5,
+        max_completion_tokens=500,
         stream=False
     )
 
     return completion.choices[0].message.content
-
 
 # =========================
 # PAGE CONFIG
