@@ -5,3 +5,4 @@ pandas
 plotly
 groq
 scikit-learn
+imbalanced-learn
