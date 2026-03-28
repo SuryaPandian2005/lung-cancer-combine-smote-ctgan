@@ -81,6 +81,13 @@ model_choice = st.sidebar.radio(
 @st.cache_resource
 def load_model(path):
     return joblib.load(path)
+@st.cache_resource
+def load_ctgan():
+    try:
+        return joblib.load("ctgan_model.pkl")
+    except:
+        return None
+
 
 if model_choice == "CTGAN + Random Forest":
     model = load_model("rf_model.pkl")
