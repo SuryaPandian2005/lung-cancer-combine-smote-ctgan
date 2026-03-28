@@ -9,7 +9,8 @@ import os
 # =========================
 # GROQ CLIENT
 # =========================
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))# =========================
+api_key = os.getenv("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY")
+client = Groq(api_key=api_key)# =========================
 # AI ANALYSIS FUNCTION
 # =========================
 def get_ai_analysis(patient_data, prediction, probability, model_name):
