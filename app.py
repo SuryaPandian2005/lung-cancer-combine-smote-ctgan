@@ -225,11 +225,19 @@ if predict_btn:
         **Random Forest classifier**.
         """)
 
-st.subheader("🤖 AI Medical Analysis") with st.spinner("Analyzing with AI..."): 
-    ai_response = get_ai_analysis
-    ( patient_data, prediction[0], 
-     probability_percent, model_choice )
-    st.write(ai_response)
+# =========================
+# 🤖 AI ANALYSIS
+# =========================
+st.subheader("🤖 AI Medical Analysis")
+
+with st.spinner("Analyzing with AI..."):
+    ai_response = get_ai_analysis(
+        patient_data,
+        prediction[0],
+        probability_percent,
+        model_choice
+    )
+
 # =========================
 # 🧾 PROFESSIONAL REPORT UI
 # =========================
