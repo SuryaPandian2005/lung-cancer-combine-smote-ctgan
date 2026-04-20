@@ -29,22 +29,23 @@ Risk: {probability}%
 Give ONLY practical output in this format:
 
 🧠 Result Summary:
-(1-2 lines simple explanation)
+(1-2 lines simple explanation of the risk level)
 
 ⚠️ Key Risk Factors:
-(bullet points, max 5)
+- (bullet points, max 5, based on patient data)
 
 ✅ What To Do Now:
-(clear action steps, simple and practical)
+- (clear action steps, simple and practical)
 
 🏥 When To See Doctor:
-(clear condition when medical help is needed)
+- (specific situations when medical help is needed)
 
 Rules:
 - Keep it SHORT
 - No long paragraphs
 - No technical words
 - Easy for normal people
+- Do not include extra text outside this format
 """
 
     completion = client.chat.completions.create(
@@ -227,18 +228,61 @@ if predict_btn:
     # =========================
     # 🤖 AI ANALYSIS
     # =========================
-    st.subheader("🤖 AI Medical Analysis")
+# =========================
+# 🤖 AI ANALYSIS
+# =========================
+st.subheader("🤖 AI Medical Analysis")
 
-    with st.spinner("Analyzing with AI..."):
-        ai_response = get_ai_analysis(
-            patient_data,
-            prediction[0],
-            probability_percent,
-            model_choice
-        )
+with st.spinner("Analyzing with AI..."):
+    ai_response = get_ai_analysis(
+        patient_data,
+        prediction[0],
+        probability_percent,
+        model_choice
+    )
 
-    st.write(ai_response)
+# =========================
+# 🧾 PROFESSIONAL REPORT UI
+# =========================
+st.markdown('<div class="card">', unsafe_allow_html=True)
+st.subheader("🧾 AI Medical Report")
 
+sections = ai_response.split("\n\n")
+
+for section in sections:
+    if "Result Summary" in section:
+        st.markdown(f"""
+        <div style="background:#1f2937;padding:15px;border-radius:10px;margin-bottom:10px;">
+        <h4>🧠 Result Summary</h4>
+        <p>{section.replace("🧠 Result Summary:", "").strip()}</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    elif "Key Risk Factors" in section:
+        st.markdown(f"""
+        <div style="background:#3b1f1f;padding:15px;border-radius:10px;margin-bottom:10px;">
+        <h4>⚠️ Key Risk Factors</h4>
+        <p>{section.replace("⚠️ Key Risk Factors:", "").strip()}</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    elif "What To Do Now" in section:
+        st.markdown(f"""
+        <div style="background:#1f3b2c;padding:15px;border-radius:10px;margin-bottom:10px;">
+        <h4>✅ What To Do Now</h4>
+        <p>{section.replace("✅ What To Do Now:", "").strip()}</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    elif "When To See Doctor" in section:
+        st.markdown(f"""
+        <div style="background:#3b2f1f;padding:15px;border-radius:10px;margin-bottom:10px;">
+        <h4>🏥 When To See Doctor</h4>
+        <p>{section.replace("🏥 When To See Doctor:", "").strip()}</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+st.markdown('</div>', unsafe_allow_html=True)
 # =========================
 # SIDEBAR
 # =========================
