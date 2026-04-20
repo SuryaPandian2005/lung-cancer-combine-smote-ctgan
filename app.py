@@ -131,25 +131,25 @@ chronic_disease = 1 if chronic_disease == "Yes" else 2
 with col2:
     st.subheader("Symptoms")
 
-yellow_fingers = st.selectbox("Yellow Fingers", ["Yes", "No"], key="yellow_fingers")
+yellow_fingers = st.selectbox("Yellow Fingers", ["No", "Yes"], key="yellow_fingers")
 yellow_fingers = 1 if yellow_fingers == "Yes" else 2
 
-allergy = st.selectbox("Allergy", ["Yes", "No"], key="allergy")
+allergy = st.selectbox("Allergy", ["No", "Yes"], key="allergy")
 allergy = 1 if allergy == "Yes" else 2
 
-wheezing = st.selectbox("Wheezing", ["Yes", "No"], key="wheezing")
+wheezing = st.selectbox("Wheezing", ["No", "Yes"], key="wheezing")
 wheezing = 1 if wheezing == "Yes" else 2
 
-coughing = st.selectbox("Coughing", ["Yes", "No"], key="coughing")
+coughing = st.selectbox("Coughing", ["No", "Yes"], key="coughing")
 coughing = 1 if coughing == "Yes" else 2
 
-short_breath = st.selectbox("Shortness of Breath", ["Yes", "No"], key="short_breath")
+short_breath = st.selectbox("Shortness of Breath", ["No", "Yes"], key="short_breath")
 short_breath = 1 if short_breath == "Yes" else 2
 
-swallowing = st.selectbox("Swallowing Difficulty", ["Yes", "No"], key="swallowing")
+swallowing = st.selectbox("Swallowing Difficulty", ["No", "Yes"], key="swallowing")
 swallowing = 1 if swallowing == "Yes" else 2
 
-chest_pain = st.selectbox("Chest Pain", ["Yes", "No"], key="chest_pain")
+chest_pain = st.selectbox("Chest Pain", ["No", "Yes"], key="chest_pain")
 chest_pain = 1 if chest_pain == "Yes" else 2
 
 # Encode gender
