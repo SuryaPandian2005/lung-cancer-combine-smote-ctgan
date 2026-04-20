@@ -26,26 +26,56 @@ Patient Data:
 Prediction: {risk}
 Risk: {probability}%
 
-Give ONLY practical output in this format:
+Give ONLY practical output in the exact format below:
 
 🧠 Result Summary:
-(1-2 lines simple explanation of the risk level)
+(Provide 1–2 short lines explaining the risk level, what it means for the patient, and overall health implication in simple terms)
 
 ⚠️ Key Risk Factors:
-- (bullet points, max 5, based on patient data)
+- (List up to 5 important risk factors based on patient data, habits, or symptoms)
+- (Include likely causes or contributing lifestyle factors if relevant)
+- (Keep each point short and clear)
 
 ✅ What To Do Now:
-- (clear action steps, simple and practical)
+- (Provide clear, step-by-step practical actions the patient can follow immediately)
+- (Include lifestyle improvements, precautions, or healthy habits)
+- (Keep instructions simple and realistic)
 
 🏥 When To See Doctor:
-- (specific situations when medical help is needed)
+- (Mention specific symptoms, warning signs, or conditions that require medical attention)
+- (Be clear about urgency if needed, e.g., “seek immediate care if…”)
 
 Rules:
-- Keep it SHORT
-- No long paragraphs
-- No technical words
-- Easy for normal people
-- Do not include extra text outside this format
+- Keep the response SHORT and structured
+- Use bullet points where required
+- Do NOT use medical jargon or complex terms
+- Use simple, everyday language
+- Be supportive and calm, not alarming
+- Base all points on the given data (do not hallucinate unknown conditions)
+- Do NOT include any text outside this format
+- Do NOT add extra sections or explanations
+🎯 Why this is better
+✅ More professional tone
+✅ Prevents AI hallucination
+✅ Ensures consistent structured output
+✅ Keeps it safe for medical-style UI
+✅ Improves real-world usability
+🔥 Bonus (optional upgrade)
+
+If you want even stronger output control, add this line:
+
+- If risk is low, focus more on prevention
+- If risk is high, focus more on caution and medical consultation
+🚀 Result
+
+Your AI will now behave like:
+
+🧑‍⚕️ Medical assistant
+📊 Risk interpreter
+🧾 Structured report generator
+
+If you want next level:
+👉 I can convert this into JSON + UI auto-render (very powerful for research/demo)
 """
 
     completion = client.chat.completions.create(
@@ -296,4 +326,4 @@ st.sidebar.write("Built with ❤️ using Streamlit")
 # 📬 Optional Contact
 st.sidebar.subheader("📬 Contact")
 st.sidebar.write("For queries or collaboration:")
-st.sidebar.write("📧 your-email@example.com")
+st.sidebar.write("📧 your-lungcancerprediction@gmail.com")
