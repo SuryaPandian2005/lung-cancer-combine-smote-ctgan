@@ -105,94 +105,34 @@ st.write("Enter patient clinical details to estimate lung cancer risk.")
 col1, col2 = st.columns(2)
 
 with col1:
-    st.subheader("Patient Information")
+    st.markdown('<div class="card">', unsafe_allow_html=True)
+    st.subheader("🧾 Patient Information")
 
     gender = st.selectbox("Gender", ["Male", "Female"])
     age = st.slider("Age", 18, 100, 50)
 
+    smoking = st.selectbox("Smoking Habit", [1, 2], format_func=lambda x: "No" if x == 1 else "Yes")
+    alcohol = st.selectbox("Alcohol Consumption", [1, 2], format_func=lambda x: "No" if x == 1 else "Yes")
+    peer_pressure = st.selectbox("Peer Pressure", [1, 2], format_func=lambda x: "No" if x == 1 else "Yes")
+    anxiety = st.selectbox("Anxiety", [1, 2], format_func=lambda x: "No" if x == 1 else "Yes")
+    fatigue = st.selectbox("Fatigue", [1, 2], format_func=lambda x: "No" if x == 1 else "Yes")
+    chronic_disease = st.selectbox("Chronic Disease", [1, 2], format_func=lambda x: "No" if x == 1 else "Yes")
 
-alcohol = st.selectbox(
-    "Alcohol Consumption",
-    [1, 2],
-    format_func=lambda x: "No" if x == 1 else "Yes"
-)
-
-peer_pressure = st.selectbox(
-    "Peer Pressure",
-    [1, 2],
-    format_func=lambda x: "No" if x == 1 else "Yes"
-)
-
-anxiety = st.selectbox(
-    "Anxiety",
-    [1, 2],
-    format_func=lambda x: "No" if x == 1 else "Yes"
-)
-
-fatigue = st.selectbox(
-    "Fatigue",
-    [1, 2],
-    format_func=lambda x: "No" if x == 1 else "Yes"
-)
-
-chronic_disease = st.selectbox(
-    "Chronic Disease",
-    [1, 2],
-    format_func=lambda x: "No" if x == 1 else "Yes"
-)
-
-smoking = st.selectbox(
-    "Smoking Habit",
-    [1, 2],
-    format_func=lambda x: "No" if x == 1 else "Yes"
-)
-
+    st.markdown('</div>', unsafe_allow_html=True)
 
 with col2:
-    st.subheader("Symptoms")
+    st.markdown('<div class="card">', unsafe_allow_html=True)
+    st.subheader("🩺 Symptoms")
 
-yellow_fingers = st.selectbox(
-    "Yellow Fingers",
-    [1, 2],
-    format_func=lambda x: "No" if x == 1 else "Yes"
-)
+    yellow_fingers = st.selectbox("Yellow Fingers", [1, 2], format_func=lambda x: "No" if x == 1 else "Yes")
+    allergy = st.selectbox("Allergy", [1, 2], format_func=lambda x: "No" if x == 1 else "Yes")
+    wheezing = st.selectbox("Wheezing", [1, 2], format_func=lambda x: "No" if x == 1 else "Yes")
+    coughing = st.selectbox("Coughing", [1, 2], format_func=lambda x: "No" if x == 1 else "Yes")
+    short_breath = st.selectbox("Shortness of Breath", [1, 2], format_func=lambda x: "No" if x == 1 else "Yes")
+    swallowing = st.selectbox("Swallowing Difficulty", [1, 2], format_func=lambda x: "No" if x == 1 else "Yes")
+    chest_pain = st.selectbox("Chest Pain", [1, 2], format_func=lambda x: "No" if x == 1 else "Yes")
 
-allergy = st.selectbox(
-    "Allergy",
-    [1, 2],
-    format_func=lambda x: "No" if x == 1 else "Yes"
-)
-
-wheezing = st.selectbox(
-    "Wheezing",
-    [1, 2],
-    format_func=lambda x: "No" if x == 1 else "Yes"
-)
-
-coughing = st.selectbox(
-    "Coughing",
-    [1, 2],
-    format_func=lambda x: "No" if x == 1 else "Yes"
-)
-
-short_breath = st.selectbox(
-    "Shortness of Breath",
-    [1, 2],
-    format_func=lambda x: "No" if x == 1 else "Yes"
-)
-
-swallowing = st.selectbox(
-    "Swallowing Difficulty",
-    [1, 2],
-    format_func=lambda x: "No" if x == 1 else "Yes"
-)
-
-chest_pain = st.selectbox(
-    "Chest Pain",
-    [1, 2],
-    format_func=lambda x: "No" if x == 1 else "Yes"
-)
-
+    st.markdown('</div>', unsafe_allow_html=True)
 # Encode gender
 gender = 1 if gender == "Male" else 0
 
