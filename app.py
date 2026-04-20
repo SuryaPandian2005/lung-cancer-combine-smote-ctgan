@@ -146,21 +146,25 @@ features = np.array([[gender, age, smoking, yellow_fingers,
 # =========================
 # PREDICTION
 # =========================
-if st.button("🔍 Predict Lung Cancer Risk"):
+st.markdown("---")
+predict_btn = st.button("🚀 Analyze Lung Cancer Risk")
 
     prediction = model.predict(features)
     prob = model.predict_proba(features)[0][1]
     probability_percent = round(prob * 100, 2)
 
-    st.subheader("Prediction Result")
+st.markdown('<div class="card">', unsafe_allow_html=True)
+st.subheader("📊 Prediction Result")
 
-    if prediction[0] == 1:
-        st.error("⚠️ High Risk of Lung Cancer")
-    else:
-        st.success("✅ Low Risk of Lung Cancer")
+if prediction[0] == 1:
+    st.error("⚠️ High Risk of Lung Cancer")
+else:
+    st.success("✅ Low Risk of Lung Cancer")
 
-    st.progress(prob)
-    st.write(f"### Risk Probability: {probability_percent}%")
+st.progress(prob)
+st.write(f"### Risk Probability: {probability_percent}%")
+
+st.markdown('</div>', unsafe_allow_html=True)
 
     # =========================
     # GAUGE CHART
