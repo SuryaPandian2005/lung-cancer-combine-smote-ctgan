@@ -276,7 +276,6 @@ if predict_btn:
             prediction[0],
             probability_percent,
             model_choice,
-            report_text
         )
 
     st.write(ai_response)
