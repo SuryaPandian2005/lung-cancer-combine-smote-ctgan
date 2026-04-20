@@ -139,7 +139,8 @@ chronic_disease = st.selectbox(
     [1, 2],
     format_func=lambda x: "No" if x == 1 else "Yes"
 )
-    smoking = st.selectbox(
+
+smoking = st.selectbox(
     "Smoking Habit",
     [1, 2],
     format_func=lambda x: "No" if x == 1 else "Yes"
