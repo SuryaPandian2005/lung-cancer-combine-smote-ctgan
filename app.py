@@ -228,58 +228,17 @@ if predict_btn:
 # =========================
 # 🤖 AI ANALYSIS
 # =========================
-st.subheader("🤖 AI Medical Analysis")
+    st.subheader("🤖 AI Medical Analysis")
 
-with st.spinner("Analyzing with AI..."):
-    ai_response = get_ai_analysis(
-        patient_data,
-        prediction[0],
-        probability_percent,
-        model_choice
-    )
+    with st.spinner("Analyzing with AI..."):
+        ai_response = get_ai_analysis(
+            patient_data,
+            prediction[0],
+            probability_percent,
+            model_choice
+        )
 
-# =========================
-# 🧾 PROFESSIONAL REPORT UI
-# =========================
-st.markdown('<div class="card">', unsafe_allow_html=True)
-st.subheader("🧾 AI Medical Report")
-
-sections = ai_response.split("\n\n")
-
-for section in sections:
-    if "Result Summary" in section:
-        st.markdown(f"""
-        <div style="background:#1f2937;padding:15px;border-radius:10px;margin-bottom:10px;">
-        <h4>🧠 Result Summary</h4>
-        <p>{section.replace("🧠 Result Summary:", "").strip()}</p>
-        </div>
-        """, unsafe_allow_html=True)
-
-    elif "Key Risk Factors" in section:
-        st.markdown(f"""
-        <div style="background:#3b1f1f;padding:15px;border-radius:10px;margin-bottom:10px;">
-        <h4>⚠️ Key Risk Factors</h4>
-        <p>{section.replace("⚠️ Key Risk Factors:", "").strip()}</p>
-        </div>
-        """, unsafe_allow_html=True)
-
-    elif "What To Do Now" in section:
-        st.markdown(f"""
-        <div style="background:#1f3b2c;padding:15px;border-radius:10px;margin-bottom:10px;">
-        <h4>✅ What To Do Now</h4>
-        <p>{section.replace("✅ What To Do Now:", "").strip()}</p>
-        </div>
-        """, unsafe_allow_html=True)
-
-    elif "When To See Doctor" in section:
-        st.markdown(f"""
-        <div style="background:#3b2f1f;padding:15px;border-radius:10px;margin-bottom:10px;">
-        <h4>🏥 When To See Doctor</h4>
-        <p>{section.replace("🏥 When To See Doctor:", "").strip()}</p>
-        </div>
-        """, unsafe_allow_html=True)
-
-st.markdown('</div>', unsafe_allow_html=True)
+    st.write(ai_response)
 # =========================
 # SIDEBAR
 # =========================
