@@ -25,6 +25,27 @@ Patient Data:
 
 Prediction: {risk}
 Risk: {probability}%
+Give ONLY practical output in the exact format below:
+
+You are a professional medical assistant AI designed to provide clear, practical, and safe health guidance.
+
+You will receive:
+- Patient clinical data
+- Model prediction (risk level)
+- Risk probability
+- (Optional) Lung medical report text
+
+Your task is to analyze all provided information and generate a simple, accurate, and helpful response.
+
+If a lung report is provided:
+- Extract key findings from the report
+- Relate them to the prediction
+- Include relevant insights in risk factors and summary
+
+If no report is provided:
+- Use only patient data and prediction
+
+--------------------------------------------------
 
 Give ONLY practical output in the exact format below:
 
@@ -32,7 +53,7 @@ Give ONLY practical output in the exact format below:
 (Provide 1–2 short lines explaining the risk level, what it means for the patient, and overall health implication in simple terms)
 
 ⚠️ Key Risk Factors:
-- (List up to 5 important risk factors based on patient data, habits, or symptoms)
+- (List up to 5 important risk factors based on patient data, symptoms, and report if available)
 - (Include likely causes or contributing lifestyle factors if relevant)
 - (Keep each point short and clear)
 
@@ -45,37 +66,25 @@ Give ONLY practical output in the exact format below:
 - (Mention specific symptoms, warning signs, or conditions that require medical attention)
 - (Be clear about urgency if needed, e.g., “seek immediate care if…”)
 
+--------------------------------------------------
+
 Rules:
 - Keep the response SHORT and structured
 - Use bullet points where required
 - Do NOT use medical jargon or complex terms
 - Use simple, everyday language
 - Be supportive and calm, not alarming
-- Base all points on the given data (do not hallucinate unknown conditions)
-- Do NOT include any text outside this format
-- Do NOT add extra sections or explanations
-🎯 Why this is better
-✅ More professional tone
-✅ Prevents AI hallucination
-✅ Ensures consistent structured output
-✅ Keeps it safe for medical-style UI
-✅ Improves real-world usability
-🔥 Bonus (optional upgrade)
-
-If you want even stronger output control, add this line:
-
+- Base all points ONLY on the given data (do not assume unknown conditions)
+- Do NOT hallucinate or invent medical facts
+- If report is unclear, say so simply and continue safely
 - If risk is low, focus more on prevention
 - If risk is high, focus more on caution and medical consultation
-🚀 Result
+- Do NOT include any text outside this format
+- Do NOT add extra sections, explanations, or headings
 
-Your AI will now behave like:
+--------------------------------------------------
 
-🧑‍⚕️ Medical assistant
-📊 Risk interpreter
-🧾 Structured report generator
-
-If you want next level:
-👉 I can convert this into JSON + UI auto-render (very powerful for research/demo)
+Output must strictly follow the format. No extra text before or after.
 """
 
     completion = client.chat.completions.create(
@@ -177,6 +186,7 @@ features = np.array([[gender, age, smoking, yellow_fingers,
 # =========================
 # PREDICTION
 # =========================
+report_text = st.text_area("📄 Paste Lung Report (Optional)")
 st.markdown("---")
 predict_btn = st.button("🚀 Analyze Lung Cancer Risk")
 
@@ -265,7 +275,8 @@ if predict_btn:
             patient_data,
             prediction[0],
             probability_percent,
-            model_choice
+            model_choice,
+            report_text
         )
 
     st.write(ai_response)
