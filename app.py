@@ -143,26 +143,47 @@ chronic_disease = st.selectbox(
 with col2:
     st.subheader("Symptoms")
 
-yellow_fingers = st.selectbox("Yellow Fingers", ["No", "Yes"], key="yellow_fingers")
-yellow_fingers = 1 if yellow_fingers == "Yes" else 2
+yellow_fingers = st.selectbox(
+    "Yellow Fingers",
+    [1, 2],
+    format_func=lambda x: "No" if x == 1 else "Yes"
+)
 
-allergy = st.selectbox("Allergy", ["No", "Yes"], key="allergy")
-allergy = 1 if allergy == "Yes" else 2
+allergy = st.selectbox(
+    "Allergy",
+    [1, 2],
+    format_func=lambda x: "No" if x == 1 else "Yes"
+)
 
-wheezing = st.selectbox("Wheezing", ["No", "Yes"], key="wheezing")
-wheezing = 1 if wheezing == "Yes" else 2
+wheezing = st.selectbox(
+    "Wheezing",
+    [1, 2],
+    format_func=lambda x: "No" if x == 1 else "Yes"
+)
 
-coughing = st.selectbox("Coughing", ["No", "Yes"], key="coughing")
-coughing = 1 if coughing == "Yes" else 2
+coughing = st.selectbox(
+    "Coughing",
+    [1, 2],
+    format_func=lambda x: "No" if x == 1 else "Yes"
+)
 
-short_breath = st.selectbox("Shortness of Breath", ["No", "Yes"], key="short_breath")
-short_breath = 1 if short_breath == "Yes" else 2
+short_breath = st.selectbox(
+    "Shortness of Breath",
+    [1, 2],
+    format_func=lambda x: "No" if x == 1 else "Yes"
+)
 
-swallowing = st.selectbox("Swallowing Difficulty", ["No", "Yes"], key="swallowing")
-swallowing = 1 if swallowing == "Yes" else 2
+swallowing = st.selectbox(
+    "Swallowing Difficulty",
+    [1, 2],
+    format_func=lambda x: "No" if x == 1 else "Yes"
+)
 
-chest_pain = st.selectbox("Chest Pain", ["No", "Yes"], key="chest_pain")
-chest_pain = 1 if chest_pain == "Yes" else 2
+chest_pain = st.selectbox(
+    "Chest Pain",
+    [1, 2],
+    format_func=lambda x: "No" if x == 1 else "Yes"
+)
 
 # Encode gender
 gender = 1 if gender == "Male" else 0
