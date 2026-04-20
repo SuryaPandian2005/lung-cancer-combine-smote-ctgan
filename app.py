@@ -131,13 +131,26 @@ chronic_disease = 1 if chronic_disease == "Yes" else 2
 with col2:
     st.subheader("Symptoms")
 
-    yellow_fingers = st.selectbox("Yellow Fingers", [1,2])
-    allergy = st.selectbox("Allergy", [1,2])
-    wheezing = st.selectbox("Wheezing", [1,2])
-    coughing = st.selectbox("Coughing", [1,2])
-    short_breath = st.selectbox("Shortness of Breath", [1,2])
-    swallowing = st.selectbox("Swallowing Difficulty", [1,2])
-    chest_pain = st.selectbox("Chest Pain", [1,2])
+yellow_fingers = st.selectbox("Yellow Fingers", ["Yes", "No"], key="yellow_fingers")
+yellow_fingers = 1 if yellow_fingers == "Yes" else 2
+
+allergy = st.selectbox("Allergy", ["Yes", "No"], key="allergy")
+allergy = 1 if allergy == "Yes" else 2
+
+wheezing = st.selectbox("Wheezing", ["Yes", "No"], key="wheezing")
+wheezing = 1 if wheezing == "Yes" else 2
+
+coughing = st.selectbox("Coughing", ["Yes", "No"], key="coughing")
+coughing = 1 if coughing == "Yes" else 2
+
+short_breath = st.selectbox("Shortness of Breath", ["Yes", "No"], key="short_breath")
+short_breath = 1 if short_breath == "Yes" else 2
+
+swallowing = st.selectbox("Swallowing Difficulty", ["Yes", "No"], key="swallowing")
+swallowing = 1 if swallowing == "Yes" else 2
+
+chest_pain = st.selectbox("Chest Pain", ["Yes", "No"], key="chest_pain")
+chest_pain = 1 if chest_pain == "Yes" else 2
 
 # Encode gender
 gender = 1 if gender == "Male" else 0
