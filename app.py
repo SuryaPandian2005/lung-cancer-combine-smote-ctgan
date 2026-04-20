@@ -242,21 +242,58 @@ if predict_btn:
 # =========================
 # SIDEBAR
 # =========================
-st.sidebar.title("About This App")
+# =========================
+# 📌 SIDEBAR
+# =========================
+st.sidebar.title("🫁 Lung Cancer AI Dashboard")
 
+st.sidebar.markdown("---")
+
+# 🔍 About
+st.sidebar.subheader("📖 About This App")
 st.sidebar.write("""
-AI-powered lung cancer prediction system.
+This application uses **Machine Learning + AI** to estimate the risk of lung cancer 
+based on patient clinical data and symptoms.
 
-Features:
-- Dual Model Comparison
-- Machine Learning prediction
-- AI Explanation (Groq)
-- Risk visualization
+It provides:
+- Instant risk prediction
+- AI-powered medical insights
+- Visual risk analysis
 """)
 
-st.sidebar.write("Developer: AI Research Project")
+# ⚙️ Features
+st.sidebar.subheader("⚙️ Features")
+st.sidebar.write("""
+- 🔄 Dual Model Comparison (CTGAN & SMOTE)
+- 🤖 AI Medical Explanation (Groq)
+- 📊 Risk Visualization (Gauge Chart)
+- 🧾 Patient Data Summary
+""")
 
-# =========================
-# DISCLAIMER
-# =========================
-st.warning("⚠️ This is an AI-based prediction tool. Not a medical diagnosis. Consult a doctor.")
+# 🧠 How it works
+st.sidebar.subheader("🧠 How It Works")
+st.sidebar.write("""
+1. Enter patient details  
+2. Click **Analyze Risk**  
+3. Model predicts probability  
+4. AI explains the result  
+""")
+
+# 🛑 Disclaimer
+st.sidebar.subheader("⚠️ Disclaimer")
+st.sidebar.warning("""
+This is an AI-based prediction tool.  
+It is **not a medical diagnosis**.  
+Always consult a qualified doctor.
+""")
+
+# 👨‍💻 Developer
+st.sidebar.markdown("---")
+st.sidebar.subheader("👨‍💻 Developer")
+st.sidebar.write("AI Research Project")
+st.sidebar.write("Built with ❤️ using Streamlit")
+
+# 📬 Optional Contact
+st.sidebar.subheader("📬 Contact")
+st.sidebar.write("For queries or collaboration:")
+st.sidebar.write("📧 your-email@example.com")
