@@ -110,26 +110,23 @@ with col1:
     gender = st.selectbox("Gender", ["Male", "Female"])
     age = st.slider("Age", 18, 100, 50)
 
-    gender = st.selectbox("Gender", ["Male", "Female"])
-    age = st.slider("Age", 18, 100, 50)
+smoking = st.selectbox("Smoking Habit", ["Yes", "No"], key="smoking")
+smoking = 1 if smoking == "Yes" else 2
 
-    smoking = st.selectbox("Smoking Habit", ["Yes", "No"])
-    smoking = 1 if smoking == "Yes" else 2
+alcohol = st.selectbox("Alcohol Consumption", ["Yes", "No"], key="alcohol")
+alcohol = 1 if alcohol == "Yes" else 2
 
-    alcohol = st.selectbox("Alcohol Consumption", ["Yes", "No"])
-    alcohol = 1 if alcohol == "Yes" else 2
+peer_pressure = st.selectbox("Peer Pressure", ["Yes", "No"], key="peer_pressure")
+peer_pressure = 1 if peer_pressure == "Yes" else 2
 
-    peer_pressure = st.selectbox("Peer Pressure", ["Yes", "No"])
-    peer_pressure = 1 if peer_pressure == "Yes" else 2
+anxiety = st.selectbox("Anxiety", ["Yes", "No"], key="anxiety")
+anxiety = 1 if anxiety == "Yes" else 2
 
-    anxiety = st.selectbox("Anxiety", ["Yes", "No"])
-    anxiety = 1 if anxiety == "Yes" else 2
+fatigue = st.selectbox("Fatigue", ["Yes", "No"], key="fatigue")
+fatigue = 1 if fatigue == "Yes" else 2
 
-    fatigue = st.selectbox("Fatigue", ["Yes", "No"])
-    fatigue = 1 if fatigue == "Yes" else 2
-
-    chronic_disease = st.selectbox("Chronic Disease", ["Yes", "No"])
-    chronic_disease = 1 if chronic_disease == "Yes" else 2
+chronic_disease = st.selectbox("Chronic Disease", ["Yes", "No"], key="chronic_disease")
+chronic_disease = 1 if chronic_disease == "Yes" else 2
 
 with col2:
     st.subheader("Symptoms")
