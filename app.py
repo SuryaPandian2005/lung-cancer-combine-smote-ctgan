@@ -110,7 +110,8 @@ with col1:
     gender = st.selectbox("Gender", ["Male", "Female"])
     age = st.slider("Age", 18, 100, 50)
 
-    alcohol = st.selectbox(
+
+alcohol = st.selectbox(
     "Alcohol Consumption",
     [1, 2],
     format_func=lambda x: "No" if x == 1 else "Yes"
