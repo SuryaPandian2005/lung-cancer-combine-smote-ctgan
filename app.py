@@ -56,7 +56,6 @@ Tamil:
 (குறுகிய மற்றும் எளிய தமிழ் விளக்கம்)
 
 ⚠️ Key Risk Factors:
-- (List up to 5 important risk factors based on patient data, symptoms, and report if available)
 - (Include likely causes or contributing lifestyle factors if relevant)
 - (Keep each point short and clear)
 
