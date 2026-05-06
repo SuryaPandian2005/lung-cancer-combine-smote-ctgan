@@ -52,19 +52,34 @@ Give ONLY practical output in the exact format below:
 🧠 Result Summary:
 (Provide 1–2 short lines explaining the risk level, what it means for the patient, and overall health implication in simple terms)
 
+Tamil:
+(குறுகிய மற்றும் எளிய தமிழ் விளக்கம்)
+
 ⚠️ Key Risk Factors:
 - (List up to 5 important risk factors based on patient data, symptoms, and report if available)
 - (Include likely causes or contributing lifestyle factors if relevant)
 - (Keep each point short and clear)
+
+Tamil:
+- குறுகிய புள்ளி
+- குறுகிய புள்ளி
 
 ✅ What To Do Now:
 - (Provide clear, step-by-step practical actions the patient can follow immediately)
 - (Include lifestyle improvements, precautions, or healthy habits)
 - (Keep instructions simple and realistic)
 
+Tamil:
+- எளிய ஆலோசனை
+- எளிய ஆலோசனை
+
 🏥 When To See Doctor:
 - (Mention specific symptoms, warning signs, or conditions that require medical attention)
 - (Be clear about urgency if needed, e.g., “seek immediate care if…”)
+
+Tamil:
+- எளிய எச்சரிக்கை அறிகுறி
+- எளிய எச்சரிக்கை அறிகுறி
 
 --------------------------------------------------
 
